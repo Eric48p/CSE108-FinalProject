@@ -1,0 +1,11 @@
+Ideas:
+
+- Tab for forum
+* Must be logged in to use
+* Only Executive board members can create posts 
+* All members comments are shown as anonymous
+* Executive board members have the option to remain anonymous or reveal their name
+* Executive board members can see the names of anyone that left a comment
+
+- Tab for live polls
+* Will be used for elections and club meeting polls 
