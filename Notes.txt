@@ -8,4 +8,28 @@ Ideas:
 * Executive board members can see the names of anyone that left a comment
 
 - Tab for live polls
-* Will be used for elections and club meeting polls 
+* Will be used for elections and club meeting polls
+
+- On login user will be a general member by default
+* If they want their account to have the role of an executive board member they would have to request that to the 
+person holding the adming account
+
+- We will create a master admin account with credentails
+* Master admin account will have a strong password
+* Credentails can be shared with executive board members so they can edit the websites data
+
+Methods:
+- Create a user
+- Check if a user attempting to create a forum is an executive board member
+- Logging in/Logging out
+
+Forum Methods:
+- Creating a forum
+- Delete a forum
+- Return all the forums and the data of each one, such as likes, dislikes, content of the post, 
+timestamp(date and time)
+- Return all the comments in a forum and the data of each one, such as likes, dislikes, content of the comment, 
+timestamp(date and time)
+- Sorting forums based on likes and dislikes
+- Liking and disliking a forum
+- Like and dislike a commment
