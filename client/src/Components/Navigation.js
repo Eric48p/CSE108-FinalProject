@@ -5,7 +5,7 @@ import Join from '../Pages/Join';
 import Calendario from '../Pages/Affairs/Calendario';
 import ExecutiveBoard from '../Pages/Affairs/ExecutiveBoard';
 import Affairs from '../Pages/Affairs/Affairs';
-import WeeklyAnnouncements from '../Pages/Affairs/WeeklyAccouncements';
+import WeeklyAnnouncements from '../Pages/Affairs/WeeklyAnnouncements';
 import Academics from '../Pages/Pillars/Academics';
 import Familia from '../Pages/Pillars/Familia';
 import ManitosMentorshipProgram from '../Pages/Pillars/ManitosMentorshipProgram';
