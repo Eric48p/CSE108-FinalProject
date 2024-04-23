@@ -16,9 +16,9 @@ export default function NavBar(){
       <Nav className='custom-Navbar-Links'>
         <Nav.Item href='/'>Casa</Nav.Item> 
         <Nav.Menu title="Affairs">
-          <Nav.Item>Executive Board</Nav.Item>
-          <Nav.Item>Weekly Announcements</Nav.Item>
-          <Nav.Item>Calendario</Nav.Item>
+          <Nav.Item href='/ExecutiveBoard'>Executive Board</Nav.Item>
+          <Nav.Item href='/WeeklyAnnouncements'>Weekly Announcements</Nav.Item>
+          <Nav.Item href='/Calendario'>Calendario</Nav.Item>
         </Nav.Menu>
         <Nav.Menu title="Pillars">
           <Nav.Item>Academics</Nav.Item>
@@ -32,8 +32,8 @@ export default function NavBar(){
             <Nav.Item>SHPE-tinas</Nav.Item>
           </Nav.Menu>
         </Nav.Menu>
-        <Nav.Item>Join</Nav.Item>
-        <Nav.Item>Alumni</Nav.Item>
+        <Nav.Item href='/Join'>Join</Nav.Item>
+        <Nav.Item href='/Alumni'>Alumni</Nav.Item>
         <Nav.Item>Forums</Nav.Item>
       </Nav>
       <Nav pullRight className='custom-Navbar-Login'>
