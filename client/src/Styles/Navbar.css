@@ -1,0 +1,30 @@
+.custom-Navbar{
+  background-color: #222222;
+  height: 10vh;
+}
+
+.custom-Navbar-Logo{
+  height: 100%;
+  width: 30%;
+}
+.custom-Navbar-Logo img{
+  height: 100%;
+}
+.custom-Navbar-Links{
+  display: flex;
+  height: 100%;
+  width: 40%;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 18px;
+}
+.custom-Navbar-Login{
+  display: flex;
+  height: 100%;
+  width: 30%;
+  align-items: center;
+  justify-content: end;
+  color: white;
+  font-size: 18px;
+}
