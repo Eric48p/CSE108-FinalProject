@@ -1,0 +1,38 @@
+.join-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .Join-Body {
+    background-image: url(../../public/Images/Join-Page/join2.png);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  .Test {
+    flex: 1;
+    background-color: #222222;
+    border: red solid;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 56px;
+    padding-bottom: 20px;
+  }
+  
+  .paragraph {
+    padding: 0 20px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    word-spacing: 0.01em;
+    text-transform: none !important;
+    letter-spacing: 0px !important;
+  }
+  

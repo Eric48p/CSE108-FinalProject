@@ -1,14 +1,32 @@
 import NavBar from "../../Components/Navbar";
+import "../../Styles/Affairs.css";
 
 function Affairs() {
-
-
-  return(
+  return (
     <div>
       <NavBar />
-      <p>Affairs Page</p>
+      <div className="Affairs-Body">
+        <h1 style={{textAlign: 'center'}}>Want to Learn More?</h1>
+      </div>
+      <div className="Test">
+        <div className="container">
+          <div className="content">
+            <div className="paragraph">
+              Click on our <a href="https://linktr.ee/UCM_SHPE" className="hyperLink" target="_blank" rel="noopener noreferrer">LinkTree</a> (or scan) to find:
+              <ul className="link-list">
+                <li>Social Media</li>
+                <li>LinkedIn</li>
+                <li>Discord</li>
+                <li>Google Drive</li>
+                <li>Open Executive Positions</li>
+                <li>Leadership Opportunities</li>
+              </ul>
+            </div>
+            <div className="qr-code"></div> {/* This div will display the QR code image */}
+          </div>
+        </div>
+      </div>
     </div>
-    
   );
 }
 
