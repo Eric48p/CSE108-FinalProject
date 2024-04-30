@@ -1,0 +1,5 @@
+.forums-body {
+  background-color: green;
+  display: flex;
+  min-height: 90vh;
+}

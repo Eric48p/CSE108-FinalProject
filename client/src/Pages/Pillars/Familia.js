@@ -1,4 +1,5 @@
 import NavBar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 import "../../Styles/Familia.css";
 // import logo from "../../../public/Images/Pillars/Academics/shpelogopiece_orig.jpg"
 
@@ -25,6 +26,7 @@ function Familia() {
           
         </div>
       </div>
+      <Footer />
     </div>
     
   );

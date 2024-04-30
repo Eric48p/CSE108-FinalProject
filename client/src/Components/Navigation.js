@@ -14,6 +14,7 @@ import Outreach from '../Pages/Pillars/Outreach';
 import Professionalism from '../Pages/Pillars/Professionalism';
 import SHPEtinas from '../Pages/Pillars/SHPE-tinas';
 import SHPENationalConvention from '../Pages/Pillars/SHPENationalConvention';
+import Forums from '../Pages/Forums';
 
 
 
@@ -38,6 +39,7 @@ function Navigation() {
           <Route path="/SHPENationalConvention" element={<SHPENationalConvention />} />
           <Route path="/Join" element={<Join />} />
           <Route path="/Alumni" element={<Alumni />} />
+          <Route path="/Forums" element={<Forums />} />
       </Routes>
   );
 }
