@@ -37,7 +37,7 @@ export default function NavBar(){
         <Nav.Item href='/Forums'>Forums</Nav.Item>
       </Nav>
       <Nav pullRight className='custom-Navbar-Login'>
-        <Nav.Item>Login / Sign up</Nav.Item>
+        <Nav.Item href='/Login'>Login / Sign up</Nav.Item>
       </Nav>
     </Navbar>
   )
