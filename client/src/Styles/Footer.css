@@ -1,0 +1,14 @@
+.footer{
+  background-color: #222222;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+}
+.footer img{
+  filter: invert();
+  height: 1.5rem;
+}
+.footer img:nth-child(-n+2){
+  margin-right: 10px;
+}

@@ -1,2 +1,8 @@
-div {
+.home-body {
+  background-color: green;
+  display: flex;
+  min-height: 90vh;
+}
+.custom-slider{
+  width: 700px;
 }
