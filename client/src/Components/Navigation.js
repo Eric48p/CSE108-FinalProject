@@ -16,6 +16,7 @@ import SHPEtinas from '../Pages/Pillars/SHPE-tinas';
 import SHPENationalConvention from '../Pages/Pillars/SHPENationalConvention';
 import Forums from '../Pages/Forums';
 import Login from '../Pages/Login';
+import Signup from '../Pages/Signup';
 
 
 
@@ -41,6 +42,7 @@ function Navigation() {
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Forums" element={<Forums />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Signup />} />
       </Routes>
   );
 }

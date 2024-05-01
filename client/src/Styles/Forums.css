@@ -21,7 +21,7 @@
 .forums-filters button{
   display: flex;
   margin-left: 2rem;
-  background-color: royalblue;
+  background-color: #f26534;
   font-size: 20px;
   color: white;
   border-radius: 16px;
@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 .forums-filters button:hover{
-  opacity: 0.9;
+  padding: 0.5em 1.1em;
 }
 .forums-posts{
   display: flex;
@@ -104,6 +104,10 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+.forum-post:hover{
+  width: 62%;
+  cursor: pointer;
+}
 .forum-post-toprow{
   /* background-color: orange; */
   display: flex;
@@ -113,7 +117,7 @@
 }
 .forum-post-toprow p{
   margin: 10px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 }
 .forum-post-middlerow{
@@ -127,7 +131,7 @@
   margin: 0 0 0 10px;
   font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: #f26534;
 }
 .forum-post-bottomrow{
   /* background-color: red; */
