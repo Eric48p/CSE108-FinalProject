@@ -35,13 +35,14 @@ class CommentInteraction(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   commentId = db.Column(db.Integer, db.ForeignKey('comment.id'))
   userId = db.Column(db.Integer, db.ForeignKey('user.id'))
+  forumId = db.Column(db.Integer, db.ForeignKey('forum.id'))
   interaction = db.Column(db.String(100), nullable=False)
 
   def __repr__(self):
-    return f'<CommentId: {self.commentId}, userId: {self.userId}, interaction: {self.interaction}>'
+    return f'<CommentId: {self.commentId}, userId: {self.userId}, forumId: {self.forumId}, interaction: {self.interaction}>'
 
 class CommentInteractionView(ModelView):
-  column_list = ('id', 'commentId', 'userId', 'interaction')
+  column_list = ('id', 'commentId', 'userId', 'forumId', 'interaction')
   can_export = True
 
 admin.add_view(CommentInteractionView(CommentInteraction, db.session))
@@ -71,6 +72,7 @@ class Forum(db.Model):
   dislikes = db.Column(db.Integer, default=0)
   comment_in_forum = db.relationship('CommentInForum', backref='forum')
   forum_interaction = db.relationship('ForumInteraction', backref='forum')
+  comment_interaction = db.relationship('CommentInteraction', backref='forum')
 
   def __repr__(self):
     return f'<Forum: {self.title}, courseId: {self.content}, timeCreated: {self.timeCreated}, creator: {self.creator}>'
