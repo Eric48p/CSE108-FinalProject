@@ -24,49 +24,50 @@ function Signup() {
   };
 
   const handleCreate = (event) => {
-    // if (
-    //   accountData.role === '' ||
-    //   accountData.firstName === '' ||
-    //   accountData.lastName === '' ||
-    //   accountData.email === '' ||
-    //   accountData.password === '' ||
-    //   accountData.confirmPassword === ''
-    // ) {
-    //   alert('Please fill in all required fields.');
-    // } else if (accountData.password !== accountData.confirmPassword) {
-    //   alert('Passwords do not match.');
-    // } else {
-    //   setAccountData((prevData) => ({
-    //     ...prevData,
-    //     password: accountData.password, // Update password in accountData
-    //   }));
-    //   // console.log('Creating account:', accountData);
-    //   fetch("http://localhost:5000/createUser", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(accountData),
-    //   })
-    //     .then((response) => {
-    //       if (!response.ok) {
-    //         throw new Error('Network response was not ok');
-    //       }
-    //       return response.json();
-    //     })
-    //     .then((data) => {
-    //       console.log("Success:", data);
-    //       console.log(accountData);
-    //       navigate('/')
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error:", error);
-    //     });
+    event.preventDefault(); // Prevent default form submission
+    console.table(accountData)
+
+    if (
+      accountData.firstName === '' ||
+      accountData.lastName === '' ||
+      accountData.email === '' ||
+      accountData.password === '' ||
+      accountData.confirmPassword === ''
+    ) {
+      alert('Please fill in all required fields.');
+    } else if (accountData.password !== accountData.confirmPassword) {
+      alert('Passwords do not match.');
+    } else {
+      setAccountData((prevData) => ({
+        ...prevData,
+        password: accountData.password, // Update password in accountData
+      }));
+      // console.log('Creating account:', accountData);
+      fetch("http://localhost:5000/createUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(accountData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Success:", data);
+          console.log(accountData);
+          // navigate('/')
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
 
       // navigate('/'); // Redirect to login page after successful account creation
-      event.preventDefault(); // Prevent default form submission
-      console.table(accountData)
     }
+  }
 
   return(
     <>
