@@ -94,18 +94,22 @@
 }
 
 /* Forum Post ===================================*/
+.forum-post-route{
+  text-decoration: none;
+  width: 60%;
+}
 .forum-post{
   display: flex;
   flex-direction: column;
   background-color: #222222;
-  width: 60%;
+  width: 100%;
   height: 10rem;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 10px;
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
 .forum-post:hover{
-  width: 62%;
+  width: 102%;
   cursor: pointer;
 }
 .forum-post-toprow{

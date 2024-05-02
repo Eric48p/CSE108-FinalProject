@@ -27,3 +27,11 @@
   color: white;
   font-size: 18px;
 }
+
+.rs-dropdown-menu{
+  background-color: #222222;
+}
+
+.rs-dropdown-item{
+  color: white;
+}
