@@ -66,17 +66,17 @@ class Forum(db.Model):
   title = db.Column(db.String(100), nullable=False)
   creator = db.Column(db.String(100), nullable=False)
   timeCreated = db.Column(db.String(100), nullable=False)
-  context = db.Column(db.String(100), nullable=False)
+  content = db.Column(db.String(500), nullable=False)
   likes = db.Column(db.Integer, nullable=False)
   dislikes = db.Column(db.Integer, nullable=False)
   comment_in_forum = db.relationship('CommentInForum', backref='forum')
   forum_interaction = db.relationship('ForumInteraction', backref='forum')
 
   def __repr__(self):
-    return f'<Forum: {self.title}, courseId: {self.context}, timeCreated: {self.timeCreated}, creator: {self.creator}>'
+    return f'<Forum: {self.title}, courseId: {self.content}, timeCreated: {self.timeCreated}, creator: {self.creator}>'
 
 class ForumView(ModelView):
-  column_list = ('id', 'title', 'creator', 'timeCreated', 'context', 'likes', 'dislikes')
+  column_list = ('id', 'title', 'creator', 'timeCreated', 'content', 'likes', 'dislikes')
   can_export = True
 
 admin.add_view(ForumView(Forum, db.session))
@@ -115,12 +115,12 @@ admin.add_view(UserView(User, db.session))
 class Comment(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   commentOwner = db.Column(db.String(100), nullable=False)
-  comment = db.Column(db.String(100), nullable=False)
+  comment = db.Column(db.String(500), nullable=False)
   timeCreated = db.Column(db.String(100), nullable=False)
   likes = db.Column(db.Integer, nullable=False)
   dislikes = db.Column(db.Integer, nullable=False)
   comment_in_forum = db.relationship('CommentInForum', backref='comment')
-  comment_interaction = db.relationship('CommentInteraction', backref='user')
+  comment_interaction = db.relationship('CommentInteraction', backref='comment')
 
   def __repr__(self):
     return f'<Comment: {self.comment}, CommentOwner: {self.commentOwner}, TimeCreated: {self.timeCreated}>'

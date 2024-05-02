@@ -3,14 +3,14 @@ import '../Styles/Join.css';
 
 function Join() {
   return (
-    <div className="join-container">
+    <div className="Join-Body">
       <NavBar />
       <div className="Join-Body">
         <h1 style={{textAlign: 'center'}}>Join our Familia</h1>
       </div>
-      <div className="Test">
-        <div className="container">
-          <div className="paragraph">
+      <div className="Join-Test">
+        <div className="Join-container">
+          <div className="Join-paragraph">
             By becoming a National member you will gain access to scholarships, life-changing conferences, and networking opportunities with over 13,000+ members and 286 Student and Professional Chapters nationwide! By creating a SHPE National Account, you have the opportunity to upload your resume to then be seen by professionals around the world. Via the SHPE website, dream job/internship postings can be filtered to fit your personal interests. Attend conferences and career fairs with dream companies! Check out our Student Chapter on Catlife for Student Membership! 🐱
             <br /><br />
             1. Click the SHPE Membership Link and create a new account<br />

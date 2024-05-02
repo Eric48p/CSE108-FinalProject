@@ -8,10 +8,10 @@ function Affairs() {
       <div className="Affairs-Body">
         <h1 style={{textAlign: 'center'}}>Want to Learn More?</h1>
       </div>
-      <div className="Test">
-        <div className="container">
-          <div className="content">
-            <div className="paragraph">
+      <div className="Affairs-Test">
+        <div className="Affairs-container">
+          <div className="Affairs-content">
+            <div className="Affairs-paragraph">
               Click on our <a href="https://linktr.ee/UCM_SHPE" className="hyperLink" target="_blank" rel="noopener noreferrer">LinkTree</a> (or scan) to find:
               <ul className="link-list">
                 <li>Social Media</li>

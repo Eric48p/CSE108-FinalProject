@@ -1,4 +1,4 @@
-.join-container {
+.Join-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -9,21 +9,33 @@
     background-attachment: fixed;
     background-size: cover;
   }
+
+  .Join-Body > h1 {
+    margin: 0;
+    padding: 40px;
+    color: white;
+    padding-top: 199px;
+    padding-bottom: 199px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+}
   
-  .Test {
+  .Join-Test {
     flex: 1;
     background-color: #222222;
     border: red solid;
   }
   
-  .container {
+  .Join-container {
     max-width: 1000px;
     margin: auto;
     padding-top: 56px;
     padding-bottom: 20px;
   }
   
-  .paragraph {
+  .Join-paragraph {
     padding: 0 20px;
     color: white;
     text-align: center;

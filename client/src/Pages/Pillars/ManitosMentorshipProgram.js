@@ -1,4 +1,5 @@
 import NavBar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 import "../../Styles/ManitosMentorshipProgram.css";
 // import logo from "../../../public/Images/Pillars/Academics/shpelogopiece_orig.jpg"
 
@@ -55,6 +56,7 @@ function ManitosMentorshipProgram() {
 
         </div>
       </div>
+      <Footer />
     </div>
     
   );

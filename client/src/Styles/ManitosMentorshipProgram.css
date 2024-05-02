@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 /* <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> */
 
-.Academics-Body {
+.Manitos-Body {
     /* background-position: center; */
     background-image:url(../../public/Images/Pillars/Academics/circuitTheoryWorkWhiteboard.jpg);
     background-attachment: fixed;
@@ -16,7 +16,7 @@
 }
 
 /* Change this h1 element and add a class name */
-.Academics-Body > h1 {
+.Manitos-Body > h1 {
     margin: 0;
     padding: 40px;
     color: white;
@@ -200,7 +200,7 @@
 	overflow: hidden;
 	height: 700px;
 	width: 1000px;
-	margin: 0 auto 80px auto;
+	margin: 0 auto 0 auto;
     position: relative;
     /* justify-content: center;
     align-items: center; */
