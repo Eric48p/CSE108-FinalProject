@@ -17,15 +17,16 @@ function Signup() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    const lowerCaseValue = name === 'email' ? value.toLowerCase() : value; // Transform email to lowercase
+    
     setAccountData({
-        ...accountData,
-        [name]: value,
+      ...accountData,
+      [name]: lowerCaseValue,
     });
   };
 
   const handleCreate = (event) => {
-    event.preventDefault(); // Prevent default form submission
-    console.table(accountData)
+    event.preventDefault();
 
     if (
       accountData.firstName === '' ||
@@ -38,11 +39,6 @@ function Signup() {
     } else if (accountData.password !== accountData.confirmPassword) {
       alert('Passwords do not match.');
     } else {
-      setAccountData((prevData) => ({
-        ...prevData,
-        password: accountData.password, // Update password in accountData
-      }));
-      // console.log('Creating account:', accountData);
       fetch("http://localhost:5000/createUser", {
         method: "POST",
         headers: {
@@ -58,14 +54,12 @@ function Signup() {
         })
         .then((data) => {
           console.log("Success:", data);
-          console.log(accountData);
-          // navigate('/')
+          console.table(accountData)
+          // navigate('/'); // Redirect after successful account creation
         })
         .catch((error) => {
           console.error("Error:", error);
         });
-
-      // navigate('/'); // Redirect to login page after successful account creation
     }
   }
 
@@ -84,7 +78,7 @@ function Signup() {
                 <input type="text" placeholder="First" name="firstName" onChange={handleInputChange}></input>
                 <input type="text" placeholder="Last" name="lastName" onChange={handleInputChange}></input>
               </span>
-              <input type="email" placeholder="Email" name="email" onChange={handleInputChange}></input>
+              <input type="email" placeholder="Email" name="email"  onChange={handleInputChange}></input>
               <input type="password" placeholder="Password" name="password" onChange={handleInputChange}></input>
               <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={handleInputChange}></input>
               <input type="submit" value="Create Account" className="register-button" onClick={handleCreate}></input>

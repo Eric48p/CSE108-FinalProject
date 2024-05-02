@@ -33,3 +33,27 @@ timestamp(date and time)
 - Sorting forums based on likes and dislikes
 - Liking and disliking a forum
 - Like and dislike a commment
+
+
+UPDATED METHODS:
+
+- Creating a user
+- Logging in
+
+- Creating a Forum (POST)
+* frontend will store users name in session tokens. frontend will send users name, time, forum title, and forum content to backend. Likes and dislikes are initialized to 0. 
+
+- Replying to a forum post (POST)
+* Front end will send forum id, commentors name, time, and comment to backend. Likes and dislikes are initialized to 0. 
+
+- Deleting a forum (DELETE)
+* Delete the forum and all comments associated with that forums id and all interactions from either forum interactions or comment interactions 
+
+- Deleting a comment (DELETE)
+* Only board members should be allowed to do this
+* Frontend will send comment ID to backend 
+
+- Editing a comment (PUT)
+* Anyone can edit their own comments
+* Frontend will send edited comment to backend
+
