@@ -169,7 +169,29 @@ def create_user():
         return jsonify({'error': 'Invalid JSON'}), 400
 
 
+@app.route('/login', methods=['POST'])
+def loginUser():
+  data = request.json
 
+  if data:
+    email = data.get('email')
+    password = data.get('password')
+
+    account = User.query.filter_by(email=email).first()
+
+    if account and account.password == password:
+      user_data = { # On successful login, send user data to frontend
+        'id': account.id,
+        'email': account.email,
+        'firstName': account.firstName,
+        'lastName': account.lastName,  
+        'role': account.role
+      }
+      return jsonify({'user': user_data, 'message': 'Logged in successfully'}), 200
+    else:
+      return jsonify({'error': 'Invalid credentials'}), 401
+  else:
+      return jsonify({'error': 'Invalid data sent'}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)
