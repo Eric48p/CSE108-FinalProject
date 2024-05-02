@@ -1,38 +1,87 @@
 /* WeeklyAnnouncements.css */
 
-.instagram-feed-container {
-  max-width: 540px;
-  min-width: 326px;
-  margin: 0 auto;
+/* Center container */
+.center-container {
+  display: flex;
+  justify-content: center;
 }
 
+/* Title */
+.title {
+  font-size: 24px;
+  color: #333; /* Adjust color as needed */
+  margin-bottom: 20px;
+}
+
+/* Additional styling for Instagram blockquote */
 .instagram-media {
-  background: #FFF;
+  background: #f4f4f4; /* Gray background */
   border: 0;
   border-radius: 3px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
   margin: 1px;
+  max-width: 540px;
+  min-width: 326px;
+  padding: 0;
+  width: 99.375%;
+  width: -webkit-calc(100% - 2px);
+  width: calc(100% - 2px);
+}
+
+.instagram-media div {
   padding: 16px;
 }
 
 .instagram-media a {
-  display: block;
+  background: #FFFFFF;
+  line-height: 0;
+  padding: 0;
   text-align: center;
   text-decoration: none;
+  width: 100%;
 }
 
-.instagram-media img {
-  max-width: 100%;
-  height: auto;
+.instagram-media svg {
+  display: block;
+  height: 50px;
+  margin: 0 auto 12px;
+  width: 50px;
 }
 
-.instagram-media p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #333;
+.instagram-media svg g path {
+  fill: #000000;
 }
 
-.instagram-media p a {
-  color: #3897f0;
-  font-weight: bold;
+.instagram-media div > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.instagram-media div > div:first-child > div:first-child {
+  background-color: #F4F4F4;
+  border-radius: 50%;
+  flex-grow: 0;
+  height: 40px;
+  margin-right: 14px;
+  width: 40px;
+}
+
+.instagram-media div > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.instagram-media div > div:first-child > div:last-child > div {
+  background-color: #F4F4F4;
+  border-radius: 4px;
+  flex-grow: 0;
+  height: 14px;
+  margin-bottom: 6px;
+}
+
+.instagram-media div > div:last-child {
+  padding: 19% 0;
 }

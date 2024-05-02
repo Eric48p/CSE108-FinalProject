@@ -92,19 +92,20 @@ function Alumni() {
         </div>
         <div className="contactContainer">
           <div className="Alumni-container">
-            <h2 className="smallTitles">Contact Us</h2>
+            <h2 className="smallTitles">For any general questions regarding Alumni Networking:</h2>
+            <p className="smallText" style={{ color: 'red' }}>* <span style={{ color: 'white' }}>Indicates required field</span></p> {/* Updated line */}
             <form id="contactForm" action="https://formspree.io/f/moqgrlpd" method="POST">
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name">Name <span style={{ color: 'red' }}>*</span>:</label>
               <input type="text" id="name" name="name" required />
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email">Email <span style={{ color: 'red' }}>*</span>:</label>
               <input type="email" id="email" name="email" required />
-              <label htmlFor="message">Message:</label>
+              <label htmlFor="message">Message <span style={{ color: 'red' }}>*</span>:</label>
               <textarea id="message" name="message" rows="4" required></textarea>
               <input type="text" name="_gotcha" style={{display: 'none'}} /> {/* Formspree anti-spam field */}
               <button type="button" onClick={submitForm}>Submit</button>
-            </form>
-          </div>
-        </div>
+              </form>
+              </div>
+              </div>
         <div className="socialMediaLinks">
           <div className="Alumni-container">
             <a href="#">Instagram</a>
