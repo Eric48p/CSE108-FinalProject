@@ -18,6 +18,7 @@ import Forums from '../Pages/Forums';
 import Login from '../Pages/Login';
 import Signup from '../Pages/Signup';
 import NewForum from '../Pages/NewForum';
+import Forum from '../Pages/Forum';
 
 
 
@@ -45,6 +46,8 @@ function Navigation() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Signup />} />
           <Route path="/NewForum" element={<NewForum />} />
+          <Route path="/Forum" element={<Forum />} />
+
       </Routes>
   );
 }
