@@ -1,0 +1,121 @@
+.new-forum-body {
+  /* background-color: #DEDEDE; */
+  display: flex;
+  min-height: 90vh;
+  flex-direction: row;
+}
+.new-forum-form-body{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.new-forum-form{
+  display: flex;
+  width: 70%;
+  height: 50%;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 10px;
+  border-radius: 1rem;
+}
+.new-forum-form p{
+  margin: 2rem 0 3rem 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+.new-forum-form input[type="text"]{
+  width: 50%;
+  height: 2rem;
+  margin-bottom: 3rem;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 18px;
+}
+.new-forum-form textarea{
+  font-family: 'Lato', monospace;
+  width: 60%;
+  height: 7rem;
+  margin-bottom: 3rem;
+}
+.new-forum-form input[type="submit"]{
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 0.7em 1.3em;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.new-forum-form input[type="submit"]:hover{
+  padding: 0.7em 1.4em;
+}
+
+
+.new-forum-preview-body{
+  display: flex;
+  background-color: #222222;
+  width: 100%;
+  justify-content: center;
+}
+.new-forum-preview-post{
+  display: flex;
+  background-color: white;
+  border-radius:  0 0 1rem 1rem;
+  width: 70%;
+  height: fit-content;
+  flex-direction: column;
+}
+.forum-post-preview-toprow{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.5rem;
+}
+.forum-post-preview-toprow p{
+  margin: 10px;
+  font-size: 18px;
+}
+.forum-post-preview-middlerow1{
+  /* background-color: yellow; */
+  display: flex;
+  width: 100%;
+  height: 6rem;
+  align-items: center;
+}
+.forum-post-preview-middlerow1 p{
+  margin: 0 0 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f26534;
+}
+.forum-post-preview-middlerow2{
+  /* background-color: yellow; */
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+}
+.forum-post-preview-middlerow2 p{
+  margin: 0 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.forum-post-preview-bottomrow{
+  /* background-color: red; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 1.5rem;
+}
+.forum-post-preview-bottomrow img{
+  height: 1rem;
+  width: 1rem;
+  margin: 0 10px 10px 0;
+}
+.forum-post-preview-bottomrow p{
+  margin: 0 5px 10px 0;
+  font-size: 1rem;
+}
