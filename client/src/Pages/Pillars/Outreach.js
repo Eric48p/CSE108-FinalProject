@@ -1,4 +1,5 @@
 import NavBar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 import "../../Styles/Outreach.css";
 // import logo from "../../../public/Images/Pillars/Academics/shpelogopiece_orig.jpg"
 
@@ -17,8 +18,28 @@ function Outreach() {
 Collaborations with other organizations on campus who align with our goals are also welcomed.</p>
           </div>
 
+          <div id="slideshow">
+            <div className="slide-wrapper">
+    
+              {/* <!-- Define each of the slides and write the content --> */}
+  
+              
+              <div className="slide">
+                <img className="slideImages cover" src="/Images/Pillars/Outreach/dia-de-ciencas_orig.png" alt="Group of highschool students" />
+              </div>
+              <div className="slide">
+                <img className="slideImages cover" src="/Images/Pillars/Outreach/halloweendrivethru_orig.jpg" alt="Halloween Trunk or Treat" />
+              </div>
+              <div className="slide">
+                <img className="slideImages cover" src="/Images/Pillars/Outreach/iuxhau-collaboration_orig.jpg" alt="Group of SHPE with iuxhau" />
+              </div>
+              
+              
+            </div>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
     
   );

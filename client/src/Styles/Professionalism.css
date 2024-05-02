@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 /* <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> */
 
-.Outreach-Body {
+.Professionalism-Body {
     /* background-position: center; */
-    background-color: #A5CDE2;
+    background-image:url(../../public/Images/Pillars/Professionalism/workspace.jpg);
     background-attachment: fixed;
     background-size: cover;
     min-height: 60vh;
     background-position: center;
 }
 
-.mainContainer4 {
+.mainContainer5 {
     background-color: #222222;
     height: 100%;
 }
 
-.Outreach-Body > h1 {
+.Professionalism-Body > h1 {
     margin: 0;
     padding: 40px;
     color: white;
@@ -28,8 +28,36 @@
     font-size: 80px;
 }
 
-.paragraph4 {
-    margin: 0 0 60px 0;
+.container5 p {
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    word-spacing: 0.01em;
+    margin-top: 10px;
+    /* margin: 0 auto 2em; */
+    
+}
+
+.container5 {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    
+    
+}
+
+.paragraph5 > h2 {
+    font-weight: 200;
+    font-size: 50px;
+    margin: -20px 0 0 0;
+}
+
+.paragraph5 {
+    margin: 10px 0 60px 0;
     color: white;
     text-align: center;
     font-weight: 400;
@@ -39,37 +67,30 @@
     word-spacing: 0.01em;
     text-transform: none !important;
     letter-spacing: 0px !important;
-    
 }
 
-.container4 p {
-    margin: 10px 0 20px 0;
-    color: white;
+.professionalismImages {
+    width: auto;
+    max-width: 100%;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    font-weight: 400;
-    font-family: "Lato", sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    word-spacing: 0.01em;
-    /* margin: 0 auto 2em; */
-    
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-.container4 {
-    max-width: 1000px;
-    margin: auto;
-    padding-top: 50px;
-    
+.textUnderImage {
+    display: block;
+    font-size: 80%;
+    text-align: center;
+    color: #bbbbbb;
+    font: "Lato", sans-serif;
+    line-height: 1.25;
+    padding-top: 5px;
+    font-weight: 500;
 }
-
-.paragraph4 > h2 {
-    font-weight: 200;
-    font-size: 32px;
-    margin: 0 0 20px 0;
-}
-
-
-
 .hyperLink {
     color: white;
 }
@@ -103,11 +124,11 @@
     margin: 120px 0 0 30px;
 }
 
-.horizontalLine2 {
+.horizontalLine5 {
     height: 0.5px;
     color: rgba(156, 156, 156, 0.13);
     background-color: rgba(156, 156, 156, 0.13);
-    margin-bottom: 0;
+    margin: 30px 0 30px 0;
     /* color: rgb(156, 156, 156); */
     /* background-color: white; */
 }
@@ -238,7 +259,7 @@ with a fixed width and height */
 
 	/* Specify the animation with the
 	duration and speed */
-	animation: slide 20s ease infinite;
+	animation: slide 15s ease infinite;
 }
 
 
