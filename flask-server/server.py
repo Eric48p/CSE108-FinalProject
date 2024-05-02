@@ -67,8 +67,8 @@ class Forum(db.Model):
   creator = db.Column(db.String(100), nullable=False)
   timeCreated = db.Column(db.String(100), nullable=False)
   content = db.Column(db.String(500), nullable=False)
-  likes = db.Column(db.Integer, nullable=False)
-  dislikes = db.Column(db.Integer, nullable=False)
+  likes = db.Column(db.Integer, default=0)
+  dislikes = db.Column(db.Integer, default=0)
   comment_in_forum = db.relationship('CommentInForum', backref='forum')
   forum_interaction = db.relationship('ForumInteraction', backref='forum')
 
@@ -87,7 +87,7 @@ class User(db.Model):
   lastName = db.Column(db.String(100), nullable=False)
   email = db.Column(db.String(100), nullable=False)
   password = db.Column(db.String(100), nullable=False)
-  role = db.Column(db.String(100), nullable=False)
+  role = db.Column(db.String(100), default='General Member')
   forum_interaction = db.relationship('ForumInteraction', backref='user')
   comment_interaction = db.relationship('CommentInteraction', backref='user')
   
@@ -117,8 +117,8 @@ class Comment(db.Model):
   commentOwner = db.Column(db.String(100), nullable=False)
   comment = db.Column(db.String(500), nullable=False)
   timeCreated = db.Column(db.String(100), nullable=False)
-  likes = db.Column(db.Integer, nullable=False)
-  dislikes = db.Column(db.Integer, nullable=False)
+  likes = db.Column(db.Integer, default=0)
+  dislikes = db.Column(db.Integer, default=0)
   comment_in_forum = db.relationship('CommentInForum', backref='comment')
   comment_interaction = db.relationship('CommentInteraction', backref='comment')
 
@@ -143,6 +143,30 @@ admin.add_view(CommentView(Comment, db.session))
 
 
 
+# How do you pass in '/createUser' from the app.route to the function
+# Creates any user with any role
+@app.route('/createUser', methods=['POST'])
+def create_user():
+    data = request.json
+
+    if data:
+        firstName = data.get('firstName')
+        lastName = data.get('lastName')
+        email = data.get('email')
+        password = data.get('password')
+
+        user_exist = User.query.filter_by(email=email).first()
+
+        if user_exist:
+          return jsonify({'error': 'User already exist'}), 400
+        else:
+          new_user = User(firstName=firstName, lastName=lastName, email=email, password=password)
+          db.session.add(new_user)
+          db.session.commit()
+
+          return jsonify({'message': 'User created successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
 
 
 
