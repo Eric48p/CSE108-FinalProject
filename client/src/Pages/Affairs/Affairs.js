@@ -1,5 +1,6 @@
 import NavBar from "../../Components/Navbar";
 import "../../Styles/Affairs.css";
+import Footer from "../../Components/Footer";
 
 function Affairs() {
   return (
@@ -26,6 +27,7 @@ function Affairs() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
