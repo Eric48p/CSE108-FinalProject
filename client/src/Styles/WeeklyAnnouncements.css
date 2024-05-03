@@ -6,16 +6,27 @@
   justify-content: center;
 }
 
+/* Whole page background */
+body {
+  background-color: #222222; /* Gray background */
+}
+
 /* Title */
 .title {
-  font-size: 24px;
-  color: #333; /* Adjust color as needed */
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 40px;
+  color: white;
+  padding-top: 199px;
+  padding-bottom: 199px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
 }
 
 /* Additional styling for Instagram blockquote */
 .instagram-media {
-  background: #f4f4f4; /* Gray background */
+  background: #FFFFFF; /* White background */
   border: 0;
   border-radius: 3px;
   box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);

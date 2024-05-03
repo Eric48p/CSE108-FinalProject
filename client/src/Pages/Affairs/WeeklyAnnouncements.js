@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from "../../Components/Navbar"; // Import the NavBar component
 import '../../Styles/WeeklyAnnouncements.css'; // Import the CSS file for styling
+import Footer from "../../Components/Footer";
 
 const WeeklyAnnouncements = () => {
   return (
@@ -26,6 +27,7 @@ const WeeklyAnnouncements = () => {
           </div>
         </blockquote>
       </div>
+      <Footer />
     </div>
   );
 }

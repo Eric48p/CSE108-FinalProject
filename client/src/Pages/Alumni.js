@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from "../Components/Navbar";
 import "../Styles/Alumni.css";
+import Footer from "../Components/Footer";
 
 function submitForm() {
   document.getElementById("contactForm").submit();
@@ -105,15 +106,9 @@ function Alumni() {
               <button type="button" onClick={submitForm}>Submit</button>
               </form>
               </div>
-              </div>
-        <div className="socialMediaLinks">
-          <div className="Alumni-container">
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Facebook</a>
-          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

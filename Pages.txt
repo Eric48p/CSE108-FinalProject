@@ -10,7 +10,7 @@ Gabriel
 - Join X
 - Affairs X
 - Network X
-- WeeklyAnnouncements
+- WeeklyAnnouncements X
 
 Eric
 - Casa
