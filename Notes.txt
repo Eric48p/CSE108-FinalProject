@@ -46,6 +46,8 @@ UPDATED METHODS:
 - Replying to a forum post (POST)
 * Front end will send forum id, commentors name, time, and comment to backend. Likes and dislikes are initialized to 0. 
 
+- Edit a forum post (PUT)
+
 - Deleting a forum (DELETE)
 * Delete the forum and all comments associated with that forums id and all interactions from either forum interactions or comment interactions 
 
@@ -56,4 +58,15 @@ UPDATED METHODS:
 - Editing a comment (PUT)
 * Anyone can edit their own comments
 * Frontend will send edited comment to backend
+
+- Liking or Disliking Forum (POST)
+* Front end will send interaction and forum id and user id
+* Backend will check if the user has already interacted with the forum
+* Backend will generate new entry in Forum interaction table and update either likes or dislikes in forums table
+
+- Liking and Disliking Comment (POST)
+* Front end will send interaction and forum id and commend id and user id
+* Back end will check if the user has already interacted with this comment
+* Back end will generate new entry in comment intraction table and update either likes or dislikes in forums table
+
 

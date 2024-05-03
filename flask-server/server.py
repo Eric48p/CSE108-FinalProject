@@ -195,5 +195,104 @@ def loginUser():
   else:
       return jsonify({'error': 'Invalid data sent'}), 400
 
+@app.route('/createForum', methods=['POST'])
+def create_forum():
+    data = request.json
+
+    if data:
+        fullName = data.get('name')
+        time = data.get('time')
+        forumTitle = data.get('title')
+        forumContent = data.get('content')
+
+        new_forum = Forum(title=forumTitle, creator=fullName, timeCreated=time)
+        db.session.add(new_forum)
+        db.session.commit()
+
+        return jsonify({'message': 'Forum created successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
+@app.route('/replyToForum', methods=['POST'])
+def reply_to_forum():
+    data = request.json
+
+    if data:
+        forumId = data.get('id')
+        commentorsName = data.get('name')
+        time = data.get('time')
+        comment = data.get('comment')
+
+        new_comment = Comment(commentOwner=commentorsName, comment=comment, timeCreated=time)
+        db.session.add(new_comment)
+        db.session.commit()
+
+        forum = Forum.query.filter_by(id=forumId).first()
+        commentInForum = CommentInForum(comment=new_comment, forum=forum)
+        db.session.add(commentInForum)
+        db.session.commit()
+
+        return jsonify({'message': 'Comment created successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
+@app.route('/editForum', methods=['PUT'])
+def edit_forum():
+    data = request.json
+
+    if data:
+      updatedTitle = data.get('title')
+      updatedTime = data.get('time')
+      updatedContent = data.get('content')
+      forumId = data.get('id')
+
+      forum = Forum.query.filter_by(id=forumId).first()
+
+      forum.title = updatedTitle
+      forum.timeCreated = updatedTime
+      forum.content = updatedContent
+      db.session.commit()
+
+      return jsonify({'message': 'Forum edited successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
+@app.route('/editComment', methods=['PUT'])
+def edit_comment():
+    data = request.json
+
+    if data:
+      updatedComment = data.get('comment')
+      commentId = data.get('id')
+
+      comment = Comment.query.filter_by(id=commentId).first()
+
+      comment.comment = updatedComment
+      db.session.commit()
+
+      return jsonify({'message': 'Comment edited successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+# id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#   commentOwner = db.Column(db.String(100), nullable=False)
+#   comment = db.Column(db.String(500), nullable=False)
+#   timeCreated = db.Column(db.String(100), nullable=False)
+#   likes = db.Column(db.Integer, default=0)
+#   dislikes = db.Column(db.Integer, default=0)
+#   comment_in_forum = db.relationship('CommentInForum', backref='comment')
+#   comment_interaction = db.relationship('CommentInteraction', backref='comment')
+
+# id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#   title = db.Column(db.String(100), nullable=False)
+#   creator = db.Column(db.String(100), nullable=False)
+#   timeCreated = db.Column(db.String(100), nullable=False)
+#   content = db.Column(db.String(500), nullable=False)
+#   likes = db.Column(db.Integer, default=0)
+#   dislikes = db.Column(db.Integer, default=0)
+#   comment_in_forum = db.relationship('CommentInForum', backref='forum')
+#   forum_interaction = db.relationship('ForumInteraction', backref='forum')
+#   comment_interaction = db.relationship('CommentInteraction', backref='forum')
