@@ -274,6 +274,69 @@ def edit_comment():
     else:
         return jsonify({'error': 'Invalid JSON'}), 400
 
+@app.route('/interactWForum', methods=['POST'])
+def interact_with_forum():
+    data = request.json
+
+    if data:
+      forumId = data.get('forumId')
+      userId = data.get('userId')
+      interaction = data.get('interaction')
+
+      forum_interacted = ForumInteraction.query.filter_by(forumId=forumId, userId=userId)
+
+      if forum_interacted:
+        return jsonify({'error': 'Forum has already been liked or disliked'}), 400
+
+      newForumInteractionEntry = ForumInteraction(forumId=forumId, userId=userId, interaction=interaction)
+      db.session.add(newForumInteractionEntry)
+      db.session.commit()
+
+      forum = Forum.query.filter_by(id=forumId).first()
+
+      if interaction == 'like':
+        forum.likes += 1
+      else:
+        forum.dislikes += 1
+
+      db.session.commit()
+
+      return jsonify({'message': 'Forum interaction has been updated successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
+@app.route('/interactWComment', methods=['POST'])
+def interact_with_comment():
+    data = request.json
+
+    if data:
+      forumId = data.get('forumId')
+      userId = data.get('userId')
+      commentId = data.get('commentId')
+      interaction = data.get('interaction')
+
+      comment_interacted = CommentInteraction.query.filter_by(forumId=forumId, userId=userId, commentId=commentId)
+
+      if comment_interacted:
+        return jsonify({'error': 'Comment has already been liked or disliked'}), 400
+
+      newCommentInteractionEntry = CommentInteraction(commentId=commentId, userId=userId, forumId=forumId, interaction=interaction)
+      db.session.add(newCommentInteractionEntry)
+      db.session.commit()
+
+      comment = Comment.query.filter_by(id=commentId).first()
+
+      if interaction == 'like':
+        comment.likes += 1
+      else:
+        comment.dislikes += 1
+
+      db.session.commit()
+
+      return jsonify({'message': 'Comment interaction has been updated successfully'}), 201
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
 if __name__ == "__main__":
     app.run(debug=True)
 
