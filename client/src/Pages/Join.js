@@ -1,5 +1,6 @@
 import NavBar from '../Components/Navbar';
 import '../Styles/Join.css';
+import Footer from "../Components/Footer";
 
 function Join() {
   return (
@@ -29,6 +30,7 @@ function Join() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

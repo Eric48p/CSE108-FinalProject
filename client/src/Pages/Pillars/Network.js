@@ -1,5 +1,6 @@
 import NavBar from "../../Components/Navbar";
 import "../../Styles/Network.css";
+import Footer from "../../Components/Footer";
 
 function Network() {
 
@@ -17,6 +18,7 @@ function Network() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
