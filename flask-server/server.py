@@ -337,6 +337,75 @@ def interact_with_comment():
     else:
         return jsonify({'error': 'Invalid JSON'}), 400
 
+@app.route('/deleteComment', methods=['DELETE'])
+def delete_comment():
+    data = request.json
+
+    if data:
+      commentId = data.get('commentId')
+
+      comment = Comment.query.filter_by(id=commentId).first()
+      commentInForum = CommentInForum.query.filter_by(commentId=commentId).first()
+      commentInteraction = CommentInteraction.query.filter_by(commentId=commentId).all()
+
+      if comment:
+        db.session.delete(comment)
+        db.session.commit()
+        db.session.delete(commentInForum)
+        db.session.commit()
+
+        if commentInteraction:
+          for interaction in commentInteraction:
+            db.session.delete(interaction)
+            db.session.commit()
+      
+        return jsonify({'message': 'Comment deleted successfully with all of its associated data'}), 201
+      else:
+        return jsonify({'message': 'Comment does not exist, cannot delete'}), 400
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
+@app.route('/deleteForum', methods=['DELETE'])
+def delete_forum():
+    data = request.json
+
+    if data:
+      forumId = data.get('forumId')
+
+      forum = Forum.query.filter_by(id=forumId).first()
+      commentInForum = CommentInForum.query.filter_by(forumId=forumId).all()
+      forumInteraction = ForumInteraction.query.filter_by(forumId=forumId).all()
+      commentInteraction = CommentInteraction.query.filter_by(forumId=forumId).all()
+
+      if forum:
+        db.session.delete(forum)
+        db.session.commit()
+
+        if forumInteraction:
+          for interaction in forumInteraction:
+            db.session.delete(interaction)
+            db.session.commit()
+
+        for comment in commentInteraction:
+          db.session.delete(comment)
+          db.session.commit()
+
+        # Delete all the comments associated with a forum
+        for comment in commentInForum:
+          temp = Comment.query.filter_by(id=comment.commentId).first()
+          db.session.delete(temp)
+          db.session.commit()
+
+        for comment in commentInForum:
+          db.session.delete(comment)
+          db.session.commmit()
+      
+        return jsonify({'message': 'Forum deleted successfully with all of its associated data'}), 201
+      else:
+        return jsonify({'message': 'Forum does not exist, cannot delete'}), 400
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
+
 if __name__ == "__main__":
     app.run(debug=True)
 
