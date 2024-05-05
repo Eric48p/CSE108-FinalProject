@@ -19,7 +19,7 @@
   margin-bottom: 40px;
 }
 
-.slideshow {
+.slideshowA {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 by 2 grid */
   gap: 20px; /* spacing between slides */
@@ -28,29 +28,35 @@
 }
 
 
-
-.slide {
-  position: relative;
-  overflow: hidden;
+.slideA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 700px;
+  width: 1000px;
+  background: #222222;
+  text-align: center;
+  position: relative; /* Add position relative */
 }
 
-.slide img {
+.slideA img {
   width: 100%; /* Make the images responsive */
-  max-width: 500px; /* Limit the maximum width of the images */
+  max-width: 600px; /* Limit the maximum width of the images */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
-.slide:hover img {
+.slideA:hover img {
   transform: scale(1.1);
 }
 
-.slideText {
-  position: absolute;
-  top: 50%;
+.slideTextA {
+  position: absolute; /* Position absolutely within each slide */
+  bottom: 20px; /* Adjust this value as needed */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -60,15 +66,16 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.slideText > div {
+
+.slideTextA > div {
   margin-bottom: 5px;
 }
 
-.slideText > div:first-child {
+.slideTextA > div:first-child {
   font-weight: bold;
 }
 
-.slide:hover .slideText {
+.slideA:hover .slideTextA {
   opacity: 1;
 }
 
