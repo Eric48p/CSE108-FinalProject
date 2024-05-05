@@ -4,6 +4,11 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import InputRequired, Length, ValidationError
+from flask_bcrypt import Bcrypt
 
 
 
@@ -15,6 +20,7 @@ CORS(app)  # Enable CORS for all routes
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 admin = Admin(app)
 
 class CommentInForum(db.Model):
@@ -162,7 +168,8 @@ def create_user():
         if user_exist:
           return jsonify({'error': 'User already exist'}), 400
         else:
-          new_user = User(firstName=firstName, lastName=lastName, email=email, password=password)
+          hashed_password = bcrypt.generate_password_hash(password)
+          new_user = User(firstName=firstName, lastName=lastName, email=email, password=hashed_password)
           db.session.add(new_user)
           db.session.commit()
 
@@ -181,15 +188,19 @@ def loginUser():
 
     account = User.query.filter_by(email=email).first()
 
-    if account and account.password == password:
-      user_data = { # On successful login, send user data to frontend
-        'id': account.id,
-        'email': account.email,
-        'firstName': account.firstName,
-        'lastName': account.lastName,  
-        'role': account.role
-      }
-      return jsonify({'user': user_data, 'message': 'Logged in successfully'}), 200
+    if account:
+      if bcrypt.check_password_hash(account.password, password):
+
+        user_data = { # On successful login, send user data to frontend
+          'id': account.id,
+          'email': account.email,
+          'firstName': account.firstName,
+          'lastName': account.lastName,  
+          'role': account.role
+        }
+        return jsonify({'user': user_data, 'message': 'Logged in successfully'}), 200
+      else:
+        return jsonify({'error': 'Invalid credentials'}), 401
     else:
       return jsonify({'error': 'Invalid credentials'}), 401
   else:

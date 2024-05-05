@@ -1,4 +1,5 @@
 import NavBar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 import "../../Styles/Academics.css";
 // import logo from "../../../public/Images/Pillars/Academics/shpelogopiece_orig.jpg"
 
@@ -89,6 +90,7 @@ function Academics() {
           
         </div>
       </div>
+      <Footer />
     </div>
     
   );

@@ -219,10 +219,9 @@ with a fixed width and height */
     /* object-fit: center; */
 }
 
-/* .slide > img {
-    min-width: 100%;
-    min-height: 100%
-} */
+.slide > img {
+    object-fit: contain;
+}
 
 /* .slideImages {
 
@@ -237,7 +236,7 @@ with a fixed width and height */
 
 	/* Specify the animation with the
 	duration and speed */
-	animation: slide 20s ease infinite;
+	animation: slide 30s ease infinite;
 }
 
 
