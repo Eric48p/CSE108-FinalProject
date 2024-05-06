@@ -23,6 +23,9 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 admin = Admin(app)
 
+# Add this code snippet to customize CORS headers
+CORS(app, allow_headers=["Content-Type", "Authorization"])
+
 class CommentInForum(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   forumId = db.Column(db.Integer, db.ForeignKey('forum.id'))
@@ -205,6 +208,25 @@ def loginUser():
       return jsonify({'error': 'Invalid credentials'}), 401
   else:
       return jsonify({'error': 'Invalid data sent'}), 400
+  
+@app.route('/updateRole', methods=['PUT'])
+def update_role():
+    data = request.json
+
+    if data:
+        email = data.get('email')
+        new_role = data.get('role')
+
+        user = User.query.filter_by(email=email).first()
+
+        if user:
+            user.role = new_role
+            db.session.commit()
+            return jsonify({'message': 'Role updated successfully'}), 200
+        else:
+            return jsonify({'error': 'User not found'}), 404
+    else:
+        return jsonify({'error': 'Invalid JSON'}), 400
 
 @app.route('/createForum', methods=['POST'])
 def create_forum():
@@ -216,13 +238,53 @@ def create_forum():
         forumTitle = data.get('title')
         forumContent = data.get('content')
 
-        new_forum = Forum(title=forumTitle, creator=fullName, timeCreated=time)
+        new_forum = Forum(title=forumTitle, creator=fullName, timeCreated=time, content=forumContent)
         db.session.add(new_forum)
         db.session.commit()
 
         return jsonify({'message': 'Forum created successfully'}), 201
     else:
         return jsonify({'error': 'Invalid JSON'}), 400
+    
+@app.route('/getForums', methods=['GET'])
+def get_forums():
+    forums = Forum.query.all()  # Assuming Forum is your SQLAlchemy model
+    forum_list = []
+    for forum in forums:
+        forum_data = {
+            'id': forum.id,
+            'title': forum.title,
+            'creator': forum.creator,
+            'timeCreated': forum.timeCreated,
+            'content': forum.content,
+            'likes': forum.likes,
+            'dislikes': forum.dislikes
+        }
+        forum_list.append(forum_data)
+    return jsonify(forums=forum_list)
+
+@app.route('/getForum', methods=['GET'])
+def get_forum():
+    forum_id = request.args.get('id')  # Get the forum ID from query parameters
+    print(forum_id)
+    if forum_id is None:
+        return jsonify({"error": "Forum ID is missing in the request"}), 400
+
+    forum = Forum.query.get(forum_id)
+    if forum:
+        forum_data = {
+            "id": forum.id,
+            "title": forum.title,
+            "creator": forum.creator,
+            "timeCreated": forum.timeCreated,
+            "content": forum.content,
+            "likes": forum.likes,
+            "dislikes": forum.dislikes,
+            # Add more fields as needed
+        }
+        return jsonify({"forum": forum_data}), 200
+    else:
+        return jsonify({"error": "Forum not found"}), 404
 
 @app.route('/replyToForum', methods=['POST'])
 def reply_to_forum():

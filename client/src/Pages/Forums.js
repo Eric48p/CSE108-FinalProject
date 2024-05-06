@@ -26,12 +26,6 @@ function Forums() {
           </div>
           <div className="forums-posts">
             <ForumPost />
-            <ForumPost />
-            <ForumPost />
-            <ForumPost />
-            <ForumPost />
-            <ForumPost />
-            <ForumPost />
           </div>
         </div>
       </div>

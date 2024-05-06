@@ -1,0 +1,99 @@
+.ExecutiveBoard-body{
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+  background-color: #222222;
+}
+.ExecutiveBoard-title{
+  display: flex;
+  background-color: #3f3f3f;
+  width: 50%;
+  height: 7rem;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 3rem 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+
+}
+.ExecutiveBoard-title p{
+  margin: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Board Members */
+/* Left */
+.ExecutiveBoard-member-left{
+  display: flex;
+  background-color: #3f3f3f;
+  width: 50rem;
+  height: 20rem;
+  margin-left: 5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  margin-bottom: 1rem;
+}
+.ExecutiveBoard-member-left-img{
+  width: 40%;
+  height: 90%;
+  margin: 1rem;
+}
+.ExecutiveBoard-member-left-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.ExecutiveBoard-member-left-text{
+  display: flex;
+  height: 90%;
+  width: 60%;
+  flex-direction: column;
+  margin: 1rem;
+  justify-content: center;
+}
+.ExecutiveBoard-member-left-text p{
+  margin: .5rem 0;
+  color: white;
+  text-align: center;
+}
+
+/* Right */
+.ExecutiveBoard-member-right{
+  display: flex;
+  background-color: #3f3f3f;
+  width: 50rem;
+  height: 20rem;
+  align-self: flex-end;
+  margin-right: 5em;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  margin-bottom: 1rem;
+}
+.ExecutiveBoard-member-right-img{
+  width: 40%;
+  height: 90%;
+  margin: 1rem;
+}
+.ExecutiveBoard-member-right-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.ExecutiveBoard-member-right-text{
+  display: flex;
+  height: 90%;
+  width: 60%;
+  flex-direction: column;
+  margin: 1rem;
+  justify-content: center;
+}
+.ExecutiveBoard-member-right-text p{
+  margin: .5rem 0;
+  color: white;
+  text-align: center;
+}

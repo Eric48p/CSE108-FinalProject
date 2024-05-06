@@ -89,3 +89,32 @@
   font-size: 1rem;
   color: white;
 }
+/* Reply */
+.reply-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  width: 20rem;
+  min-height: 10rem;
+  height: fit-content;
+}
+
+.reply-popup textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.reply-popup button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}

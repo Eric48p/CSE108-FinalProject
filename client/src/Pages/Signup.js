@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Signup() {
 
+  const navigate = useNavigate()
+
   const [accountData, setAccountData] = useState({
     firstName: "",
     lastName: "",
@@ -55,7 +57,7 @@ function Signup() {
         .then((data) => {
           console.log("Success:", data);
           console.table(accountData)
-          // navigate('/'); // Redirect after successful account creation
+          navigate('/Login'); // Redirect after successful account creation
         })
         .catch((error) => {
           console.error("Error:", error);

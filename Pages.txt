@@ -14,7 +14,7 @@ Gabriel
 
 Eric
 - Casa
-- ExecutiveBoard
-- Calendario
-- SHPEtinas
-- SHPENationalConvention
+- ExecutiveBoard 
+- Calendario   
+- SHPEtinas  
+- SHPENationalConvention 

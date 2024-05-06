@@ -1,0 +1,50 @@
+.SHPEtinas-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.SHPEtinas-Body {
+  background-image: url(../../public/Images/Pillars/SHPE-tinas/shpetinas.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: -100px; /* Adjust the value as needed */
+  padding-bottom: 100px;
+}
+
+.SHPEtinas-Body > h1 {
+  margin: 0;
+  padding: 40px;
+  color: white;
+  padding-top: 199px;
+  padding-bottom: 199px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+}
+
+.SHPEtinas-Test {
+  flex: 1;
+  background-color: #222222;
+}
+
+.SHPEtinas-container {
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 56px;
+  padding-bottom: 20px;
+}
+
+.SHPEtinas-paragraph {
+  padding: 0 20px;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  word-spacing: 0.01em;
+  text-transform: none !important;
+  letter-spacing: 0px !important;
+}
