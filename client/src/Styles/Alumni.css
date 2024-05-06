@@ -22,9 +22,8 @@
 .slideshowA {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 by 2 grid */
-  gap: 20px; /* spacing between slides */
-  justify-content: flex-end; /* Move slides more to the right */
-  margin-right: -120px;
+  gap: -50px; /* Decrease the gap between slides */
+  justify-content: center; /* Center the slides horizontally */
 }
 
 
