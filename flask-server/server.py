@@ -293,20 +293,19 @@ def get_comments():
   comments_dict = []
 
   if comments:
-    for comment in comments:
-      comment_data = {
-              "id": comment.id,
-              "commentOwner": comment.commentOwner,
-              "comment": comment.comment,
-              "timeCreated": comment.timeCreated,
-              "likes": comment.likes,
-              "dislikes": comment.dislikes,
-          }
-          comments_dict.append(comment_data)
-      
+      for comment in comments:
+        comment_data = {
+                "id": comment.comment.id,
+                "commentOwner": comment.comment.commentOwner,
+                "comment": comment.comment.comment,
+                "timeCreated": comment.comment.timeCreated,
+                "likes": comment.comment.likes,
+                "dislikes": comment.comment.dislikes,
+            }
+        comments_dict.append(comment_data)
       return jsonify(comments_dict), 200
-    else:
-        return jsonify({"error": "Forum not found"}), 404
+  else:
+    return jsonify({"error": "Forum not found"}), 404
   
 
 
@@ -379,8 +378,9 @@ def interact_with_forum():
       forumId = data.get('forumId')
       userId = data.get('userId')
       interaction = data.get('interaction')
+      print(forumId, userId, interaction)
 
-      forum_interacted = ForumInteraction.query.filter_by(forumId=forumId, userId=userId)
+      forum_interacted = ForumInteraction.query.filter_by(forumId=forumId, userId=userId).first()
 
       if forum_interacted:
         return jsonify({'error': 'Forum has already been liked or disliked'}), 400
@@ -412,7 +412,7 @@ def interact_with_comment():
       commentId = data.get('commentId')
       interaction = data.get('interaction')
 
-      comment_interacted = CommentInteraction.query.filter_by(forumId=forumId, userId=userId, commentId=commentId)
+      comment_interacted = CommentInteraction.query.filter_by(forumId=forumId, userId=userId, commentId=commentId).first()
 
       if comment_interacted:
         return jsonify({'error': 'Comment has already been liked or disliked'}), 400

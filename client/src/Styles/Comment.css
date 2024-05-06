@@ -31,12 +31,33 @@
   /* font-weight: bold; */
   color: white;
 }
+.forum-comment-middlerow textarea{
+  width: 20rem;
+  height: 3rem;
+  margin-left: 2rem;
+}
 .forum-comment-bottomrow{
   display: flex;
   justify-content: end;
   align-items: center;
   width: 100%;
   height: 2.5rem;
+}
+.forum-comment-edit{
+  width: 100%;
+  display: flex;
+  margin-left: 1rem;
+}
+.forum-comment-edit p{
+  cursor: pointer;
+  font-weight: bold;
+}
+.forum-comment-edit button{
+  width: 4rem;
+  background-color: #f26534;
+  border: none;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 .forum-comment-bottomrow p{
   margin: 0 5px 0px 0;
@@ -48,4 +69,5 @@
   width: 1rem;
   margin: 0 10px 0px 0;
   filter: invert();
+  cursor: pointer;
 }
