@@ -289,7 +289,25 @@ def get_forum():
 @app.route('/getComments', methods=['GET'])
 def get_comments():
   forum_id = request.args.get('id')  # Get the forum ID from query parameters
-  print(forum_id)
+  comments = CommentInForum.query.filter_by(forumId=forum_id).all()
+  comments_dict = []
+
+  if comments:
+    for comment in comments:
+      comment_data = {
+              "id": comment.id,
+              "commentOwner": comment.commentOwner,
+              "comment": comment.comment,
+              "timeCreated": comment.timeCreated,
+              "likes": comment.likes,
+              "dislikes": comment.dislikes,
+          }
+          comments_dict.append(comment_data)
+      
+      return jsonify(comments_dict), 200
+    else:
+        return jsonify({"error": "Forum not found"}), 404
+  
 
 
 @app.route('/replyToForum', methods=['POST'])
