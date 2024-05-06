@@ -285,6 +285,12 @@ def get_forum():
         return jsonify({"forum": forum_data}), 200
     else:
         return jsonify({"error": "Forum not found"}), 404
+    
+@app.route('/getComments', methods=['GET'])
+def get_comments():
+  forum_id = request.args.get('id')  # Get the forum ID from query parameters
+  print(forum_id)
+
 
 @app.route('/replyToForum', methods=['POST'])
 def reply_to_forum():
