@@ -43,7 +43,7 @@ export default function NavBar() {
           <Nav.Item onClick={() => navigate("/ExecutiveBoard")}>
             Executive Board
           </Nav.Item>
-          {/* <Nav.Item onClick={() => navigate('/WeeklyAnnouncements')}>Weekly Announcements</Nav.Item> */}
+          { <Nav.Item onClick={() => navigate('/WeeklyAnnouncements')}>Weekly Announcements</Nav.Item> }
           <Nav.Item onClick={() => navigate("/Calendario")}>
             Calendario
           </Nav.Item>

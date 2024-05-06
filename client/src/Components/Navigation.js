@@ -5,7 +5,7 @@ import Join from '../Pages/Join';
 import Calendario from '../Pages/Affairs/Calendario';
 import ExecutiveBoard from '../Pages/Affairs/ExecutiveBoard';
 import Affairs from '../Pages/Affairs/Affairs';
-// import WeeklyAnnouncements from '../Pages/Affairs/WeeklyAnnouncements';
+import WeeklyAnnouncements from '../Pages/Affairs/WeeklyAnnouncements';
 import Academics from '../Pages/Pillars/Academics';
 import Familia from '../Pages/Pillars/Familia';
 import ManitosMentorshipProgram from '../Pages/Pillars/ManitosMentorshipProgram';
@@ -30,7 +30,7 @@ function Navigation() {
           <Route path="/" element={<Home />} />
           <Route path="/Affairs" element={<Affairs />} />
           <Route path="/ExecutiveBoard" element={<ExecutiveBoard />} />
-          {/* <Route path="/WeeklyAnnouncements" element={<WeeklyAnnouncements />} /> */}
+          { <Route path="/WeeklyAnnouncements" element={<WeeklyAnnouncements />} /> }
           <Route path="/Calendario" element={<Calendario />} />
           <Route path="/Academics" element={<Academics />} />
           <Route path="/Familia" element={<Familia />} />
