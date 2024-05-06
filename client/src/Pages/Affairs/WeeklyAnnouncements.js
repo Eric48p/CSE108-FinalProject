@@ -5,7 +5,7 @@ import Footer from "../../Components/Footer";
 
 const WeeklyAnnouncements = () => {
   return (
-    <div>
+    <div className='weekly-body'>
       <NavBar /> 
       <div className="center-container">
         <h2 className="titleweekly" style={{textAlign: 'center'}}>Weekly Announcements</h2>
