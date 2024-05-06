@@ -1,4 +1,4 @@
-/* WeeklyAnnouncements.css
+ WeeklyAnnouncements.css
 
 .center-container {
   display: flex;
@@ -8,9 +8,9 @@
 
 body {
   background-color: #222222;
-} */
+} 
 
-/* .title {
+ .titleweekly {
   margin: 0;
   padding: 40px;
   color: white;
@@ -20,10 +20,10 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 80px;
-} */
+} 
 
-/* Additional styling for Instagram blockquote */
-/* .instagram-media {
+Additional styling for Instagram blockquote */
+ .instagram-media {
   background: #FFFFFF;
   border: 0;
   border-radius: 3px;
@@ -39,9 +39,9 @@ body {
 
 .instagram-media div {
   padding: 16px;
-} */
+} 
 
-/* .instagram-media a {
+.instagram-media a {
   background: #FFFFFF;
   line-height: 0;
   padding: 0;
@@ -59,9 +59,9 @@ body {
 
 .instagram-media svg g path {
   fill: #000000;
-} */
+} 
 
-/* .instagram-media div > div:first-child {
+ .instagram-media div > div:first-child {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -93,4 +93,4 @@ body {
 
 .instagram-media div > div:last-child {
   padding: 19% 0;
-} */
+} 
