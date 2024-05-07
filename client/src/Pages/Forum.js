@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import NavBar from "../Components/Navbar";
 import "../Styles/Forum.css";
 import Comment from "../Components/Comment";
+
 
 function Forum() {
   const { id } = useParams(); // Get the forum ID from route parameters
@@ -14,6 +15,7 @@ function Forum() {
   const [editedTitle, setEditedTitle] = useState("");
   const [editedContent, setEditedContent] = useState("");
   const userData = JSON.parse(sessionStorage.getItem("user")); // Assuming user data is stored in session storage
+  const navigate = useNavigate()
 
   const getCurrentTime = () => {
     const now = new Date();
@@ -98,6 +100,33 @@ function Forum() {
       // Handle the case where user data or role is missing
       console.error("User data or role is missing");
       return false; // Or return a default value based on your application logic
+    }
+  };
+
+  const handleDeleteClick = async () => {
+    // const userData = JSON.parse(sessionStorage.getItem("user")); // Assuming user data is stored in session storage
+    try {
+      const response = await fetch("http://localhost:5000/deleteForum", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          forumId: forumData.id
+        }),
+      });
+
+      const data = await response.json();
+      console.log(forumData.id, userData.id);
+
+      if (response.ok) {
+        console.log("Forum delelted successfully:", data.message);
+        navigate("/Forums")
+      } else {
+        console.error("Error updating forum interaction:", data.error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
@@ -231,6 +260,14 @@ function Forum() {
                   <p>Edit</p>
                 </span>
               )
+            ) : null}
+            {forumData.creator === `${userData.firstName} ${userData.lastName}` ? (
+                <span
+                  className="individual-forum-post-edit"
+                  onClick={handleDeleteClick}
+                >
+                  <p>Delete</p>
+                </span>
             ) : null}
             <span className="individual-forum-post-likes">
               <p>{forumData.likes}</p>

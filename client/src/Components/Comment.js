@@ -67,6 +67,31 @@ export default function Comment() {
     }
   };
 
+  const handleDeleteClick = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/deleteComment", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: commentIdToEdit
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Comment deleted successfully:", data.message);
+        window.location.reload();
+      } else {
+        console.error("Error deleting comment:", data.error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   const handleCancelEdit = () => {
     setEditMode(false);
     setEditedComment("");
@@ -103,7 +128,17 @@ export default function Comment() {
                   <span className="forum-comment-edit" onClick={() => handleEditClick(comment.id, comment.comment)}>
                     <p style={{ color: "#f26534" }}>Edit</p>
                   </span>
+                  
                 )}
+              </>
+            )}
+            {comment.commentOwner === `${userData.firstName} ${userData.lastName}` && (
+              <>
+                {editMode && commentIdToEdit === comment.id ? (
+                  <span className="forum-comment-edit" onClick={() => handleDeleteClick(comment.id)}>
+                    <p style={{ color: "#f26534" }}>Delete</p>
+                  </span>
+                ) : null}
               </>
             )}
             <p>{comment.likes}</p>

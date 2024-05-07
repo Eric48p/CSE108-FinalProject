@@ -495,7 +495,7 @@ def delete_forum():
 
         for comment in commentInForum:
           db.session.delete(comment)
-          db.session.commmit()
+          db.session.commit()
       
         return jsonify({'message': 'Forum deleted successfully with all of its associated data'}), 201
       else:
