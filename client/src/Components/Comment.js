@@ -123,12 +123,28 @@ export default function Comment() {
     setCommentIdToEdit("");
   };
 
+  // Function to check if the user's role is "General Member"
+  const isGeneralMember = () => {
+    // Retrieve user data from session storage or wherever it's stored
+    const userData = JSON.parse(sessionStorage.getItem("user")) // Assuming user data is stored in session storage
+
+    // Check if userData exists and if it has a role property
+    if (userData && userData.role) {
+      // console.log(userData.role)
+      return userData.role === "General Member"
+    } else {
+      // Handle the case where user data or role is missing
+      console.error("User data or role is missing")
+      return false // Or return a default value based on your application logic
+    }
+  }
+
   return (
     <>
       {comments.map((comment) => (
         <div className="forum-comment" key={comment.id}>
-          <div className="forum-comment-toprow">
-            <p>{comment.commentOwner}</p>
+          <div className="individual-forum-post-toprow">
+            <p>{isGeneralMember() ? "Anonymous" : comment.commentOwner}</p>
             <p>{comment.timeCreated}</p>
           </div>
           <div className="forum-comment-middlerow">
