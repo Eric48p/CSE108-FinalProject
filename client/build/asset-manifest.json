@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a6acc6dc.css",
-    "main.js": "/static/js/main.43470ae4.js",
+    "main.js": "/static/js/main.2a21dff9.js",
     "static/media/Networking-banquet.png": "/static/media/Networking-banquet.750edfb27092d590817f.png",
     "static/media/join2.png": "/static/media/join2.b09c1dde06588e927c22.png",
     "static/media/yosemite-valley.jpeg": "/static/media/yosemite-valley.3d3603126f16df959f83.jpeg",
@@ -12,10 +12,10 @@
     "static/media/shpetinas.jpg": "/static/media/shpetinas.9ac9021d67aeeca8cf2b.jpg",
     "index.html": "/index.html",
     "main.a6acc6dc.css.map": "/static/css/main.a6acc6dc.css.map",
-    "main.43470ae4.js.map": "/static/js/main.43470ae4.js.map"
+    "main.2a21dff9.js.map": "/static/js/main.2a21dff9.js.map"
   },
   "entrypoints": [
     "static/css/main.a6acc6dc.css",
-    "static/js/main.43470ae4.js"
+    "static/js/main.2a21dff9.js"
   ]
 }

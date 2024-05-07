@@ -28,9 +28,10 @@ function Navigation() {
   return (
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/Affairs" element={<Affairs />} />
           <Route path="/ExecutiveBoard" element={<ExecutiveBoard />} />
-          { <Route path="/WeeklyAnnouncements" element={<WeeklyAnnouncements />} /> }
+          <Route path="/WeeklyAnnouncements" element={<WeeklyAnnouncements />} /> 
           <Route path="/Calendario" element={<Calendario />} />
           <Route path="/Academics" element={<Academics />} />
           <Route path="/Familia" element={<Familia />} />
@@ -43,7 +44,6 @@ function Navigation() {
           <Route path="/Join" element={<Join />} />
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Forums" element={<Forums />} />
-          <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Signup />} />
           <Route path="/NewForum" element={<NewForum />} />
           <Route path="/Forum/:id" element={<Forum />} />
