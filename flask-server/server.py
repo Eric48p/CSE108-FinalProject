@@ -512,6 +512,8 @@ def delete_forum():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
 
 # id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 #   commentOwner = db.Column(db.String(100), nullable=False)
