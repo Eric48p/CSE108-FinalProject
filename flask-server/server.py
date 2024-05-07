@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_restful import abort
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
@@ -25,6 +25,10 @@ admin = Admin(app)
 
 # Add this code snippet to customize CORS headers
 CORS(app, allow_headers=["Content-Type", "Authorization"])
+
+@app.route('/')
+def serve():
+   return send_from_directory(app.static_folder, 'index.html')
 
 class CommentInForum(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -157,9 +161,7 @@ admin.add_view(CommentView(Comment, db.session))
 # How do you pass in '/createUser' from the app.route to the function
 # Creates any user with any role
 
-@app.route('/')
-def serve():
-   return send_from_directory(app.static_folder, 'index.html')
+
 
 @app.route('/createUser', methods=['POST'])
 def create_user():
