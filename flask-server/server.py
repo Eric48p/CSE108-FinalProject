@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_restful import abort
 from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
@@ -33,6 +33,12 @@ def serve():
 @app.route('/test')
 def index():
     return 'Hello, World!'
+
+# Route to serve the JavaScript file
+@app.route('/Login')
+def serve_Loginjs():
+    return send_from_directory('../client/Pages', 'Login.js')
+   
 
 class CommentInForum(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
