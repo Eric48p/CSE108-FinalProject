@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "proxy": "https://immense-stream-35350-31d598bddf0b.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@nextui-org/navbar": "^2.0.30",
