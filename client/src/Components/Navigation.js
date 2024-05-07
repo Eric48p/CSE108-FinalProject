@@ -46,8 +46,7 @@ function Navigation() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Signup />} />
           <Route path="/NewForum" element={<NewForum />} />
-          <Route path="/Forum/:id" element={<Forum />} /> {/* Updated route to accept ID */}
-
+          <Route path="/Forum/:id" element={<Forum />} />
       </Routes>
   );
 }
