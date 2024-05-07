@@ -14,7 +14,7 @@ from flask_bcrypt import Bcrypt
 
 # from sqlalchemy import create_engine, MetaData, Table
 
-app = Flask(__name__, static_folder='../client/build', static_url_path='/')
+app = Flask(__name__, static_folder='../client/build', static_url_path='')
 app.secret_key = 'super secret key'
 CORS(app)  # Enable CORS for all routes
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
