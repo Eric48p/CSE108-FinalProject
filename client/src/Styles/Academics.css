@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato');
-/* <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> */
 
 .Academics-Body {
-    /* background-position: center; */
     background-image:url(../../public/Images/Pillars/Academics/circuitTheoryWorkWhiteboard.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -15,7 +13,6 @@
     height: 100%;
 }
 
-/* Change this h1 element and add a class name */
 .Academics-Body > h1 {
     margin: 0;
     padding: 40px;
@@ -58,7 +55,6 @@
     word-spacing: 0.01em;
     text-transform: none !important;
     letter-spacing: 0px !important;
-    /* margin: 0 auto 2em; */
 }
 
 .hyperLink {
@@ -68,12 +64,10 @@
 .shpeLogo {
     width: 413px;
     display: inline-block;
-    /* float: left; */
     max-width: 100%;
 }
 
 .discordTextBox {
-    /* border: orange solid; */
     position: relative;
     margin-bottom: 30px;
     padding-left: 30px;
@@ -87,7 +81,6 @@
 }
 
 .box {
-    /* border: yellow solid; */
     display: inline-block;
     width: 45%;
     position: absolute;
@@ -99,8 +92,6 @@
     color: rgba(156, 156, 156, 0.13);
     background-color: rgba(156, 156, 156, 0.13);
     margin-bottom: 0;
-    /* color: rgb(156, 156, 156); */
-    /* background-color: white; */
 }
 
 .smallTitles {
@@ -116,7 +107,6 @@
     color: #d5d5d5;
     text-decoration: none;
     border-bottom: 1px solid #333333;
-    /* display: block; */
     font-family: "Lato", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -143,8 +133,6 @@
 
 .list {
     color: #d5d5d5;
-    /* border-bottom: 1px solid #333333; */
-    /* text-decoration: none; */
     font-size: 20px;
 }
 
@@ -156,7 +144,6 @@
     text-transform: none;
     word-wrap: break-word;
     text-align: left;
-    /* border: white solid; */
 }
 
 .list a {

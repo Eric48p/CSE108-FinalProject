@@ -11,7 +11,7 @@
 .Alumni-Body {
   background-color: #222222;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden; 
 }
 
 .slideshowContainer {
@@ -21,9 +21,9 @@
 
 .slideshowA {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 by 2 grid */
-  gap: -50px; /* Decrease the gap between slides */
-  justify-content: center; /* Center the slides horizontally */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: -50px; 
+  justify-content: center; 
 }
 
 
@@ -36,13 +36,13 @@
   width: 1000px;
   background: #222222;
   text-align: center;
-  position: relative; /* Add position relative */
+  position: relative; 
 }
 
 .slideA img {
-  width: 100%; /* Make the images responsive */
-  max-width: 600px; /* Limit the maximum width of the images */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  max-width: 600px; 
+  height: auto; 
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
@@ -52,8 +52,8 @@
 }
 
 .slideTextA {
-  position: absolute; /* Position absolutely within each slide */
-  bottom: 20px; /* Adjust this value as needed */
+  position: absolute; 
+  bottom: 20px; 
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -85,7 +85,7 @@
   font-family: "Lato", sans-serif;
   font-size: 20px;
   line-height: 1.5;
-  margin: 20px auto; /* add margin for spacing */
+  margin: 20px auto; 
 }
 
 .Alumni-container {
@@ -113,7 +113,7 @@
 
 .contactContainer label {
   display: block;
-  color: white; /* Change text color to white */
+  color: white; 
   margin-bottom: 10px;
 }
 
@@ -124,8 +124,8 @@
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #222222; /* Match background color */
-  color: white; /* Change text color to white */
+  background-color: #222222; 
+  color: white; 
 }
 
 .contactContainer textarea {

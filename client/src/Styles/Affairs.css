@@ -61,7 +61,7 @@
 }
 
 .link-list {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
 }
 
 .Affairs-container {
@@ -86,10 +86,10 @@
   }
 
 .qr-code {
-    background-image: url(../../public/Images/Affairs-Page/linktree_qr.png); /* URL to your QR code image */
+    background-image: url(../../public/Images/Affairs-Page/linktree_qr.png);  
     background-size: contain;
     background-repeat: no-repeat;
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
-    margin-left: 20px; /* Adjust spacing between list and QR code */
+    width: 200px; 
+    height: 200px; 
+    margin-left: 20px; 
 }

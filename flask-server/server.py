@@ -14,7 +14,7 @@ from flask_bcrypt import Bcrypt
 
 # from sqlalchemy import create_engine, MetaData, Table
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build', static_url_path='')
 app.secret_key = 'super secret key'
 CORS(app)  # Enable CORS for all routes
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -156,6 +156,11 @@ admin.add_view(CommentView(Comment, db.session))
 
 # How do you pass in '/createUser' from the app.route to the function
 # Creates any user with any role
+
+@app.route('/')
+def serve():
+   return send_from_directory(app.static_folder, 'index.html')
+
 @app.route('/createUser', methods=['POST'])
 def create_user():
     data = request.json

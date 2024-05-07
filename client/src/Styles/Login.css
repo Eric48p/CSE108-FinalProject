@@ -1,5 +1,4 @@
 .login-body {
-  /* background-color: green; */
   display: flex;
   min-height: 90vh;
 }
@@ -14,7 +13,6 @@
 }
 .login-form-body{
   display: flex;
-  /* background-color: blue; */
   width: 40%;
   align-items: center;
   justify-content: center;
