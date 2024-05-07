@@ -4,7 +4,7 @@ import json
 url = 'http://localhost:5000/updateRole'
 headers = {'Content-Type': 'application/json'}
 # Enter the user's email you wish to modify
-payload = {'email': 'no@email.com', 'role': 'Admin'}
+payload = {'email': 'eric.48p@gmail.com', 'role': 'Admin'}
 
 response = requests.put(url, headers=headers, data=json.dumps(payload))
 

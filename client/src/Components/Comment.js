@@ -31,7 +31,32 @@ export default function Comment() {
   }, [id]); // Include 'id' in the dependency array to fetch data when ID changes
 
   const handleCommentLike = async (commentId, interaction) => {
-    // Your existing code for handling comment likes
+    try {
+      const response = await fetch("http://localhost:5000/interactWComment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          forumId: id, // Assuming forum ID is available in your component
+          userId: userData.id, // Assuming userId is available in your userData
+          commentId: commentId,
+          interaction: interaction,
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log("Comment interaction updated successfully:", data.message);
+        window.location.reload()
+        // Update the state or UI as needed
+      } else {
+        console.error("Error updating comment interaction:", data.error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleEditClick = (commentId, comment) => {
@@ -75,7 +100,7 @@ export default function Comment() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: commentIdToEdit
+          commentId: commentIdToEdit
         }),
       });
 
