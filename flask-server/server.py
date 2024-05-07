@@ -14,7 +14,7 @@ from flask_bcrypt import Bcrypt
 
 # from sqlalchemy import create_engine, MetaData, Table
 
-app = Flask(__name__, static_folder='client/build', static_url_path='')
+app = Flask(__name__, static_folder='client/build', static_url_path='/')
 app.secret_key = 'super secret key'
 CORS(app)  # Enable CORS for all routes
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -28,8 +28,7 @@ CORS(app, allow_headers=["Content-Type", "Authorization"])
 
 @app.route('/')
 def serve():
-   return "hello, world!"
-  #  return send_from_directory(app.static_folder, 'index.html')
+   return send_from_directory(app.static_folder, 'index.html')
 
 class CommentInForum(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
