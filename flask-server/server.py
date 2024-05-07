@@ -30,6 +30,10 @@ CORS(app, allow_headers=["Content-Type", "Authorization"])
 def serve():
    return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/test')
+def index():
+    return 'Hello, World!'
+
 class CommentInForum(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   forumId = db.Column(db.Integer, db.ForeignKey('forum.id'))
