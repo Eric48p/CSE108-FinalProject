@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:8080 flask-server.server:app
+web: gunicorn flask-server.server:app
